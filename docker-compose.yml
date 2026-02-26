@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  afrivoice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: afrivoice-prototype
+    ports:
+      - "8080:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - afrivoice-network
+
+networks:
+  afrivoice-network:
+    driver: bridge

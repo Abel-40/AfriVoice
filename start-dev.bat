@@ -1,0 +1,19 @@
+@echo off
+REM AfriVoice - Development Start Script (Windows)
+REM This script starts the AfriVoice prototype in development mode with hot reload
+
+echo.
+echo 🔥 Starting AfriVoice Prototype (Development Mode)...
+echo.
+echo Building Docker image and starting container with hot reload...
+echo.
+
+docker-compose -f docker-compose.dev.yml up
+
+echo.
+echo ✅ AfriVoice is running in development mode!
+echo 📱 Open your browser and go to: http://localhost:3000
+echo 🔄 Hot reload is enabled - your changes will appear automatically
+echo.
+echo To stop the application, press Ctrl+C
+pause

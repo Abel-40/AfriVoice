@@ -1,0 +1,244 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Import Google Fonts for AfriVoice */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* AfriVoice Color Palette */
+  --color-primary-teal: oklch(0.55 0.18 200);
+  --color-secondary-orange: oklch(0.65 0.15 45);
+  --color-tertiary-purple: oklch(0.60 0.12 280);
+  --color-success-green: oklch(0.65 0.15 150);
+  --color-neutral-light: oklch(0.98 0.001 0);
+  --color-neutral-dark: oklch(0.20 0.01 0);
+  --color-muted-gray: oklch(0.92 0.002 0);
+  
+  --primary: var(--color-primary-teal);
+  --primary-foreground: var(--color-neutral-light);
+  --sidebar-primary: var(--color-primary-teal);
+  --sidebar-primary-foreground: var(--color-neutral-light);
+  --chart-1: var(--color-primary-teal);
+  --chart-2: var(--color-secondary-orange);
+  --chart-3: var(--color-tertiary-purple);
+  --chart-4: var(--color-success-green);
+  --chart-5: var(--color-primary-teal);
+  --radius: 0.75rem;
+  --background: var(--color-neutral-light);
+  --foreground: var(--color-neutral-dark);
+  --card: var(--color-neutral-light);
+  --card-foreground: var(--color-neutral-dark);
+  --popover: var(--color-neutral-light);
+  --popover-foreground: var(--color-neutral-dark);
+  --secondary: var(--color-secondary-orange);
+  --secondary-foreground: var(--color-neutral-light);
+  --muted: var(--color-muted-gray);
+  --muted-foreground: oklch(0.552 0.016 285.938);
+  --accent: var(--color-primary-teal);
+  --accent-foreground: var(--color-neutral-light);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: var(--color-neutral-light);
+  --border: var(--color-muted-gray);
+  --input: var(--color-muted-gray);
+  --ring: var(--color-primary-teal);
+  --sidebar: var(--color-neutral-light);
+  --sidebar-foreground: var(--color-neutral-dark);
+  --sidebar-accent: var(--color-primary-teal);
+  --sidebar-accent-foreground: var(--color-neutral-light);
+  --sidebar-border: var(--color-muted-gray);
+  --sidebar-ring: var(--color-primary-teal);
+}
+
+.dark {
+  --primary: var(--color-blue-700);
+  --primary-foreground: var(--color-blue-50);
+  --sidebar-primary: var(--color-blue-500);
+  --sidebar-primary-foreground: var(--color-blue-50);
+  --background: oklch(0.141 0.005 285.823);
+  --foreground: oklch(0.85 0.005 65);
+  --card: oklch(0.21 0.006 285.885);
+  --card-foreground: oklch(0.85 0.005 65);
+  --popover: oklch(0.21 0.006 285.885);
+  --popover-foreground: oklch(0.85 0.005 65);
+  --secondary: oklch(0.24 0.006 286.033);
+  --secondary-foreground: oklch(0.7 0.005 65);
+  --muted: oklch(0.274 0.006 286.033);
+  --muted-foreground: oklch(0.705 0.015 286.067);
+  --accent: oklch(0.274 0.006 286.033);
+  --accent-foreground:  oklch(0.92 0.005 65);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.488 0.243 264.376);
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --sidebar: oklch(0.21 0.006 285.885);
+  --sidebar-foreground: oklch(0.85 0.005 65);
+  --sidebar-accent: oklch(0.274 0.006 286.033);
+  --sidebar-accent-foreground:  oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.488 0.243 264.376);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  /* Typography System for AfriVoice */
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+  
+  h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  
+  small {
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+  
+  .text-caption {
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  
+  /* Focus states for accessibility */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}
